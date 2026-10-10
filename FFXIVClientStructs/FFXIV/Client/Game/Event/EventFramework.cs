@@ -144,6 +144,9 @@ public unsafe partial struct EventFramework {
     public InstanceContentDeepDungeon* GetInstanceContentDeepDungeon()
         => GetInstanceContentDirector<InstanceContentDeepDungeon>(InstanceContentType.DeepDungeon);
 
+    public InstanceContentMahjong* GetInstanceContentMahjong()
+        => GetInstanceContentDirector<InstanceContentMahjong>(InstanceContentType.Mahjong);
+
     public InstanceContentOceanFishing* GetInstanceContentOceanFishing()
         => GetInstanceContentDirector<InstanceContentOceanFishing>(InstanceContentType.OceanFishing);
 

@@ -19954,6 +19954,12 @@ classes:
     vtbls:
       - ea: 0x1423D1FA0
         base: Client::Game::InstanceContent::InstanceContentDirector
+    funcs:
+      0x141A223E0: ctor
+      0x141A225B0: HandleActorControl # ActorControl 0x7D0
+      0x141A23860: GetPlayerInfo
+      0x141A23890: GetHandLimitState
+      0x141A238A0: GetNewHandDeadline
   Client::Game::InstanceContent::InstanceContentAirForceOne: # Air Force One GATE in Gold Saucer
     vtbls:
       - ea: 0x1423D2CD0
