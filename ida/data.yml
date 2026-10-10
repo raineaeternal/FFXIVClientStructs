@@ -102,6 +102,10 @@ globals:
   0x142ACB4D9: g_Client::Game::QuestManager::LeveQuestsReceived
   0x142ACB4DA: g_Client::Game::QuestManager::CompletedLeveQuestsReceived
   0x142463770: g_Client::Game::Emj::TileAttributes # uint[34]
+  0x14248F730: g_Client::Game::EmjAi::ThreatWeightClosed # int[18], indexed by turn
+  0x14248F780: g_Client::Game::EmjAi::ThreatWeightOneMeld # int[18], indexed by turn
+  0x14248F7D0: g_Client::Game::EmjAi::ThreatWeightTwoMelds # int[18], indexed by turn
+  0x14248F820: g_Client::Game::EmjAi::ThreatWeightThreeMelds # int[18], indexed by turn
   0x142ACB500: g_InitializeSceneDataValues
   0x142ACB8FC: g_InitializeSceneDataCount
   0x1428A8EF0: g_Component::SteamApi::InterfaceContext::ISteamFriends
@@ -1807,6 +1811,9 @@ classes:
       - ea: 0x142439638
     funcs:
       0x141ADDC70: ctor
+      0x141ADE620: RunAiDecision # (seat)
+      0x141ADE7B0: GetAiAction
+      0x141ADE8F0: RunDangerEvaluation # (seat)
       0x141ADEC20: GetLocalSeatHandle
       0x141ADEC70: HasLocalEngine
       0x141ADECB0: GetLocalEngine
@@ -1846,8 +1853,10 @@ classes:
     vtbls:
       - ea: 0x142439508
     funcs:
+      0x141ADAE00: GetHandTileDangerLevel
       0x141ADAEA0: GetHandTileCount
       0x141ADAEF0: GetDrawnTile
+      0x141ADAF10: GetDrawnTileDangerLevel
   Client::Game::Emj::SeatHandle:
     vtbls:
       - ea: 0x142439520
@@ -1927,6 +1936,31 @@ classes:
     funcs:
       0x141C8C510: SettleWin
       0x141C8CBB0: SettleExhaustiveDraw
+  Client::Game::EmjAi::DangerEvaluator:
+    funcs:
+      0x141CCC170: ctor
+      0x141CCE0B0: Compute
+  Client::Game::EmjAi::OpponentModel:
+    funcs:
+      0x141CDA920: WaitsToTileProbability
+      0x141CDADA0: ctor
+      0x141CDB1A0: CombineWaitScores
+  Client::Game::EmjAi::Danger:
+    funcs:
+      0x141CC2FF0: ctor
+      0x141CF4950: GetCombinedScore
+      0x141CF4C10: WriteResults
+      0x141CF5070: ComputeThreatStates
+      0x141CF51F0: GetThreatWeight
+  Client::Game::EmjAi:
+    funcs:
+      0x141C7F950: DecideOwnTurn
+      0x141C7FE30: DecideOnDiscard
+      0x141C7FF50: EvaluateDanger
+      0x141C81DF0: GetDangerLevel
+      0x141CBECA0: ThinkOwnTurn # static
+      0x141CBF560: ThinkOnDiscard # static
+      0x141CBFEA0: ComputeDangerScores
   Client::Game::Group::PartyMember:
     funcs:
       0x140B253C0: Reset
@@ -15247,6 +15281,9 @@ classes:
       0x141107B80: GetEmjAddonText
       0x141107D70: GetEmjAddonText2
       0x141108080: GetEmjAddonText3
+      0x14110A2B0: UpdateDangerMarkers
+      0x14110A640: UpdateCallHint
+      0x14110C580: AutoPlaySeat
       0x14110C710: UpdateResultYakuText
   Client::UI::Agent::AgentEmj:
     vtbls:
