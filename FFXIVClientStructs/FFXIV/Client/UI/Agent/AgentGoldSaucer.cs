@@ -22,6 +22,9 @@ public unsafe partial struct AgentGoldSaucer {
     [FieldOffset(0x124)] public byte FilterDeckSorting;
     [FieldOffset(0x140)] public RacingChocoboNameResolver RacingChocoboNameResolver;
 
+    // [MemberFunction("")]
+    // public partial void UpdateMahjongTab();
+
     [MemberFunction("E8 ?? ?? ?? ?? 84 C0 75 ?? EB ?? 83 F8")]
     public partial bool RefreshDeckEdit();
 }
