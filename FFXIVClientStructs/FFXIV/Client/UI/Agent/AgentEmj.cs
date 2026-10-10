@@ -20,6 +20,15 @@ public unsafe partial struct AgentEmj {
     /// </remarks>
     [FieldOffset(0x30)] public uint MatchType;
 
+    // [MemberFunction("")]
+    // public partial void GetEngine();
+
+    // [MemberFunction("")]
+    // public partial void OpenChiSelection();
+
+    [MemberFunction("48 89 5C 24 ?? 48 89 6C 24 ?? 48 89 74 24 ?? 48 89 7C 24 ?? 41 56 48 83 EC ?? 48 8B E9 48 8B 49 ?? ?? ?? ?? FF 50 ?? 48 8B C8")]
+    public partial void CreateGame();
+
     // Client::UI::Agent::AgentEmj::EmjCharaView
     //   Client::UI::Misc::CharaView
     [GenerateInterop]
@@ -47,12 +56,40 @@ public unsafe partial struct AgentEmj {
         /// </remarks>
         [FieldOffset(0xFAB)] public byte EmjCostumeId;
 
+        // [MemberFunction("")]
+        // public partial EmjGame* Ctor();
+
+        // [MemberFunction("")]
+        // public partial void GetEmjAddonText();
+
+        // [MemberFunction("")]
+        // public partial void GetEmjAddonText2();
+
+        // [MemberFunction("")]
+        // public partial void GetEmjAddonText3();
+
+        // [MemberFunction("")]
+        // public partial void UpdateDangerMarkers();
+
+        // [MemberFunction("")]
+        // public partial void UpdateCallHint();
+
+        // [MemberFunction("")]
+        // public partial void AutoPlaySeat();
+
+        // [MemberFunction("")]
+        // public partial void UpdateResultYakuText();
+
         // Client::UI::Agent::AgentEmj::EmjGame::Seat
+        [GenerateInterop]
         [StructLayout(LayoutKind.Explicit, Size = 0x338)]
-        public struct Seat {
+        public unsafe partial struct Seat {
             [FieldOffset(0x000)] public EmjCharaView CharaView;
             [FieldOffset(0x330)] private uint Unk330; // set to 3 once the CharaView is ready
             [FieldOffset(0x334)] public byte SeatIndex;
+
+            // [MemberFunction("")]
+            // public partial Seat* Ctor();
         }
     }
 }
