@@ -15110,12 +15110,26 @@ classes:
         base: Client::UI::Misc::CharaView
     funcs:
       0x1409D0500: ctor
+  Client::UI::Agent::AgentEmj::EmjGame::Seat:
+    funcs:
+      0x141104110: ctor # unused, because inlined
+  Client::UI::Agent::AgentEmj::EmjGame:
+    vtbls:
+      - ea: 0x1421FEAC8
+    funcs:
+      0x141104370: ctor
+      0x141107B80: GetEmjAddonText
+      0x141107D70: GetEmjAddonText2
+      0x141108080: GetEmjAddonText3
   Client::UI::Agent::AgentEmj:
     vtbls:
       - ea: 0x1421FE8F8
         base: Client::UI::Agent::AgentInterface
     funcs:
       0x1410DB090: ctor
+      0x1410DC4B0: GetEngine
+      0x1410E1F40: OpenChiSelection
+      0x1410E4360: CreateGame
   Client::UI::Agent::AgentAozContentBriefing:
     vtbls:
       - ea: 0x1421C9A10
