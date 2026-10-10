@@ -3808,6 +3808,14 @@ classes:
   Client::Game::UI::Emj:
     instances:
       - ea: 0x142AE3420
+    funcs:
+      0x140C47650: Clear
+      0x140C47670: SetData # (matchesPlayed, currentRating, highestRating, rankPoints, rank), from ActorControl 0x7D1
+      0x140C47700: GetMatchesPlayed
+      0x140C47710: GetCurrentRating
+      0x140C47720: GetHighestRating
+      0x140C47730: GetRankPoints
+      0x140C47740: GetRank
   Client::Game::UI::NpcYell:
     instances:
       - ea: 0x142AE3458
@@ -14348,6 +14356,7 @@ classes:
         base: Client::UI::Agent::AgentInterface
     funcs:
       0x1410B9C40: ctor
+      0x1410BC260: UpdateMahjongTab
       0x1410BF080: RefreshDeckEdit
   Client::UI::Agent::AgentTripleTriadCoinExchange:
     vtbls:
