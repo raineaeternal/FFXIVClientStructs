@@ -101,6 +101,7 @@ globals:
   0x142ACB4D8: g_Client::Game::QuestManager::QuestRepeatFlagsReceived
   0x142ACB4D9: g_Client::Game::QuestManager::LeveQuestsReceived
   0x142ACB4DA: g_Client::Game::QuestManager::CompletedLeveQuestsReceived
+  0x142463770: g_Client::Game::Emj::TileAttributes # uint[34]
   0x142ACB500: g_InitializeSceneDataValues
   0x142ACB8FC: g_InitializeSceneDataCount
   0x1428A8EF0: g_Component::SteamApi::InterfaceContext::ISteamFriends
@@ -1801,6 +1802,104 @@ classes:
       0x140E55A30: GetAbilityIdFromItem
       0x140E55A50: GetStainFromItem
       0x140E55A70: GetBeedingCapacityFromItem
+  Client::Game::EmjEngine:
+    vtbls:
+      - ea: 0x142439638
+    funcs:
+      0x141ADDC70: ctor
+      0x141ADEC20: GetLocalSeatHandle
+      0x141ADEC70: HasLocalEngine
+      0x141ADECB0: GetLocalEngine
+      0x141ADEDA0: SetGame
+  Client::Game::EmjEngineCore:
+    vtbls:
+      - ea: 0x1424396C0
+    funcs:
+      0x141ADFC60: ctor
+  Client::Game::EmjLocalEngine:
+    vtbls:
+      - ea: 0x1424395B0
+    funcs:
+      0x141ADC830: SetStartSeat # called with a random seat when the game is created
+      0x141ADD7A0: SetSeed
+  Client::Game::Emj::Table:
+    vtbls:
+      - ea: 0x142439698
+    funcs:
+      0x141ADF600: ctor
+      0x141AE7880: BuildWinResult
+  Client::Game::Emj::ClientTable:
+    vtbls:
+      - ea: 0x1424396B8
+        base: Client::Game::Emj::Table
+  Client::Game::Emj::LocalTable:
+    vtbls:
+      - ea: 0x1424396B0
+        base: Client::Game::Emj::Table
+    funcs:
+      0x141ADFF70: ctor
+  Client::Game::Emj::EventHistory:
+    funcs:
+      0x141AE60C0: ApplyEvent
+  Client::Game::Emj::PlayerHandle:
+    vtbls:
+      - ea: 0x142439508
+    funcs:
+      0x141ADAEA0: GetHandTileCount
+      0x141ADAEF0: GetDrawnTile
+  Client::Game::Emj::SeatHandle:
+    vtbls:
+      - ea: 0x142439520
+    funcs:
+      0x141ADBD80: GetSeat
+      0x141ADBDC0: GetPlayerHandle
+  Client::Game::Emj::Meld:
+    funcs:
+      0x141C72490: CalcFu
+      0x141C725F0: Initialize
+      0x141C72930: GetDisplayTiles
+      0x141C72BA0: GetTileCount
+      0x141C72BD0: CopyTiles
+  Client::Game::Emj::MeldList:
+    funcs:
+      0x141C72CB0: ctor
+      0x141C72D00: GetMeld
+      0x141C72EC0: AddChi
+      0x141C72FB0: AddPon
+      0x141C73080: AddOpenKan
+      0x141C73140: UpgradePonToAddedKan
+      0x141C731F0: AddConcealedKan
+  Client::Game::Emj::HandAnalyzer:
+    funcs:
+      0x141C76700: AddWait
+      0x141C76BC0: RecordWaits
+      0x141C76CA0: FindTankiWaits
+      0x141C77750: Decompose
+      0x141C78380: CheckKokushiWaits
+      0x141C78690: CheckIsolatedShape
+      0x141C78A60: FindWaits
+  Client::Game::Emj::WinAnalyzer:
+    funcs:
+      0x141C79920: AddGroup
+      0x141C79BD0: DecomposeMelds
+      0x141C7A8E0: Analyze
+  Client::Game::Emj::WinResult:
+    funcs:
+      0x141C7B030: AddCandidate
+      0x141C7B0E0: FindBestHand
+  Client::Game::Emj::Player:
+    funcs:
+      0x141C7B710: ctor
+      0x141C7B990: Initialize
+      0x141C7C100: CountRedFives
+      0x141C7CA70: AnalyzeWin
+      0x141C7D5A0: IsTenpai
+      0x141C7D680: FindRiichiDiscards
+      0x141C7DB70: GetAvailableActions
+  Client::Game::Emj::Score:
+    funcs:
+      0x141C8C510: SettleWin
+      0x141C8CBB0: SettleExhaustiveDraw
   Client::Game::Group::PartyMember:
     funcs:
       0x140B253C0: Reset

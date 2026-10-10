@@ -1,3 +1,4 @@
+using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 
 namespace FFXIVClientStructs.FFXIV.Client.UI.Agent;
@@ -34,10 +35,7 @@ public unsafe partial struct AgentEmj {
 
         [FieldOffset(0xF68)] public AgentEmj* Agent;
         [FieldOffset(0xF70)] public UIModule* UIModule;
-        /// <remarks>
-        /// Client::Game::EmjEngine
-        /// </remarks>
-        [FieldOffset(0xF80)] public void* Engine;
+        [FieldOffset(0xF80)] public EmjEngine* Engine;
         [FieldOffset(0xF8C)] public uint State;
 
         /// <remarks>
