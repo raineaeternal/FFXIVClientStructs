@@ -1828,6 +1828,7 @@ classes:
     funcs:
       0x141ADF600: ctor
       0x141AE7880: BuildWinResult
+      0x141C79240: GetYakuDisplayId # static, internal yaku id -> Addon row 12282 + id
   Client::Game::Emj::ClientTable:
     vtbls:
       - ea: 0x1424396B8
@@ -1853,6 +1854,9 @@ classes:
     funcs:
       0x141ADBD80: GetSeat
       0x141ADBDC0: GetPlayerHandle
+  Client::Game::Emj::YakuHanTable:
+    funcs:
+      0x141C6F760: GetHan
   Client::Game::Emj::Meld:
     funcs:
       0x141C72490: CalcFu
@@ -1896,6 +1900,29 @@ classes:
       0x141C7D5A0: IsTenpai
       0x141C7D680: FindRiichiDiscards
       0x141C7DB70: GetAvailableActions
+  Client::Game::Emj::YakuEvaluator:
+    funcs:
+      0x141C824B0: IsTanyao
+      0x141C82590: IsPureDoubleChi
+      0x141C82710: IsMixedTripleChi
+      0x141C827E0: IsPureStraight
+      0x141C82900: IsOutsideHand
+      0x141C829A0: IsTriplePon
+      0x141C82B30: IsThreeConcealedPon
+      0x141C82C30: IsLittleThreeDragons
+      0x141C82D30: IsTerminalsInAllGroups
+      0x141C82E20: IsHalfFlush
+      0x141C83000: IsFullFlush
+      0x141C831E0: IsRenhou
+      0x141C842E0: AddYaku
+      0x141C84330: CheckFirstTurnYaku
+      0x141C84460: CheckYakuman
+      0x141C84E90: CheckSituationalYaku
+      0x141C85240: CheckFanpai
+      0x141C854E0: ApplyTwoHanMinimum
+      0x141C85560: AddDora
+      0x141C85F10: Evaluate
+      0x141C88120: ScoreCandidate
   Client::Game::Emj::Score:
     funcs:
       0x141C8C510: SettleWin
@@ -15220,6 +15247,7 @@ classes:
       0x141107B80: GetEmjAddonText
       0x141107D70: GetEmjAddonText2
       0x141108080: GetEmjAddonText3
+      0x14110C710: UpdateResultYakuText
   Client::UI::Agent::AgentEmj:
     vtbls:
       - ea: 0x1421FE8F8
