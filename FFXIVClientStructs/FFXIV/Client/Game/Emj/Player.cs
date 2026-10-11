@@ -35,7 +35,7 @@ public unsafe partial struct Player {
     public partial Player* Ctor();
 
     [MemberFunction("E8 ?? ?? ?? ?? 49 8B 47 ?? 4D 8D 7F")]
-    public partial void Initialize(void* a2, void* rules, void* roundState, int a5);
+    public partial void Initialize(void* a2, void* rules, RoundState* roundState, int a5);
 
     [MemberFunction("E8 ?? ?? ?? ?? 8B C8 03 D8")]
     public partial int CountRedFives();

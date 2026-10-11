@@ -13,6 +13,7 @@ public unsafe partial struct Board {
     /// Indexed by seat
     /// </remarks>
     [FieldOffset(0x560), FixedSizeArray] internal FixedSizeArray4<DiscardPile> _discardPiles;
+    [FieldOffset(0x990)] public RoundState RoundState;
 
     [GenerateInterop]
     [StructLayout(LayoutKind.Explicit, Size = 0xFC)]

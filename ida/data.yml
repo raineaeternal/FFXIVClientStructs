@@ -1882,6 +1882,30 @@ classes:
       0x141C73080: AddOpenKan
       0x141C73140: UpgradePonToAddedKan
       0x141C731F0: AddConcealedKan
+  Client::Game::Emj::RoundState:
+    vtbls:
+      - ea: 0x1424638D0
+    funcs:
+      0x141C73A40: ctor
+      0x141C73D40: IsFinalHand
+      0x141C73EC0: GetRiichiSticks # position 4 returns the table total
+      0x141C740B0: DeclareRiichi
+      0x141C740F0: CancelRiichi
+      0x141C74160: ClearFirstTurn
+      0x141C741A0: InterruptFirstTurn # on any call
+      0x141C74450: DecodeDoraIndicators
+      0x141C74760: AddKanDora
+      0x141C74A40: DistributeRiichiSticks
+      0x141C74B70: UpdateStandings
+      0x141C74E20: GetStandings
+      0x141C74E70: GetStandingSeats
+      0x141C74EF0: GetPlacement
+      0x141C74FC0: ResetUnseenTileCounts
+      0x141C753B0: RemoveUnseenTile
+      0x141C755F0: ResetGame
+      0x141C75780: ResetHand
+      0x141C75920: CheckGameEnd
+      0x141C75AD0: AdvanceRound
   Client::Game::Emj::HandAnalyzer:
     funcs:
       0x141C76700: AddWait
