@@ -42,25 +42,25 @@ public unsafe partial struct HandAnalyzer {
     [FieldOffset(0x228)] public Player* Player;
 
     [MemberFunction("48 89 6C 24 ?? 48 89 74 24 ?? 48 89 7C 24 ?? 41 56 45 33 D2 45 8B F0")]
-    public partial void AddWait();
+    public partial void AddWait(uint tile, int remaining, uint discardTile);
 
     [MemberFunction("48 89 5C 24 ?? 48 89 6C 24 ?? 48 89 74 24 ?? 57 41 54 41 55 41 56 41 57 48 83 EC ?? 45 8B E8 48 8B F9")]
-    public partial void RecordWaits();
+    public partial bool RecordWaits(uint* tileCounts, uint tile1, uint tile2);
 
     [MemberFunction("40 53 55 56 41 54 41 55 41 56 41 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 33 F6")]
-    public partial void FindTankiWaits();
+    public partial void FindTankiWaits(uint* tileCounts);
 
     [MemberFunction("40 55 53 41 54 41 57 48 8D AC 24 ?? ?? ?? ?? 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 85 ?? ?? ?? ?? 44 89 4C 24 ?? 45 8B E1 44 89 44 24 ?? 45 8B C8")]
-    public partial void Decompose();
+    public partial void Decompose(uint* tileCounts, int groupCount, uint startTile);
 
     [MemberFunction("E8 ?? ?? ?? ?? 89 AB ?? ?? ?? ?? 85 C0")]
-    public partial void CheckKokushiWaits();
+    public partial bool CheckKokushiWaits(uint* tileCounts);
 
     [MemberFunction("48 89 5C 24 ?? 56 48 83 EC ?? 48 8B 81 ?? ?? ?? ?? 48 8B D9 83 B8 ?? ?? ?? ?? 00")]
-    public partial void CheckIsolatedShape();
+    public partial bool CheckIsolatedShape();
 
     [MemberFunction("48 89 5C 24 ?? 48 89 6C 24 ?? 56 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 33 ED 48 8B D9")]
-    public partial void FindWaits();
+    public partial bool FindWaits();
 
     [GenerateInterop]
     [StructLayout(LayoutKind.Explicit, Size = 0x08)]

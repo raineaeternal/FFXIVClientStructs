@@ -32,7 +32,7 @@ public unsafe partial struct Meld {
     [FieldOffset(0x4C)] public int Fu;
 
     [MemberFunction("E8 ?? ?? ?? ?? 3B D8 7D ?? 48 8B 47")]
-    public partial void GetTileCount();
+    public partial int GetTileCount();
 }
 
 [Flags]

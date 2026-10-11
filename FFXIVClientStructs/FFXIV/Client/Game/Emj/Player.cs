@@ -35,20 +35,20 @@ public unsafe partial struct Player {
     public partial Player* Ctor();
 
     [MemberFunction("E8 ?? ?? ?? ?? 49 8B 47 ?? 4D 8D 7F")]
-    public partial void Initialize();
+    public partial void Initialize(void* a2, void* rules, void* roundState, int a5);
 
     [MemberFunction("E8 ?? ?? ?? ?? 8B C8 03 D8")]
-    public partial void CountRedFives();
+    public partial int CountRedFives();
 
     [MemberFunction("E8 ?? ?? ?? ?? 85 C0 75 ?? FF C6 83 FE")]
-    public partial void AnalyzeWin();
+    public partial bool AnalyzeWin();
 
     [MemberFunction("E8 ?? ?? ?? ?? FF C7 48 8D 76 ?? 48 83 C5")]
-    public partial void IsTenpai();
+    public partial bool IsTenpai();
 
     [MemberFunction("E8 ?? ?? ?? ?? 48 8B 93 ?? ?? ?? ?? 44 8B 8A")]
-    public partial void FindRiichiDiscards();
+    public partial bool FindRiichiDiscards(uint tile);
 
     [MemberFunction("E8 ?? ?? ?? ?? 8B 56 ?? 81 EA")]
-    public partial void GetAvailableActions();
+    public partial uint GetAvailableActions(void* a2);
 }

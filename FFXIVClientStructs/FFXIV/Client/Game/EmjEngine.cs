@@ -1,3 +1,6 @@
+using FFXIVClientStructs.FFXIV.Client.Game.Emj;
+using FFXIVClientStructs.FFXIV.Client.UI.Agent;
+
 namespace FFXIVClientStructs.FFXIV.Client.Game;
 
 // Client::Game::EmjEngine
@@ -8,26 +11,26 @@ public unsafe partial struct EmjEngine {
     [FieldOffset(0x08)] public EmjEngineCore* Core;
 
     [MemberFunction("E8 ?? ?? ?? ?? EB ?? 48 8B C6 48 8B D7")]
-    public partial EmjEngine* Ctor();
+    public partial EmjEngine* Ctor(void* callback, bool isSolo);
 
     [MemberFunction("E8 ?? ?? ?? ?? BF ?? ?? ?? ?? 48 8D 45 ?? 8B D7")]
-    public partial void RunAiDecision();
+    public partial bool RunAiDecision(int seat);
 
     [MemberFunction("E8 ?? ?? ?? ?? 4C 8B F0 8B 48")]
-    public partial void GetAiAction();
+    public partial GameEvent* GetAiAction();
 
     [MemberFunction("E8 ?? ?? ?? ?? BF ?? ?? ?? ?? 48 8D 54 24 ?? 8B CF 33 F6")]
-    public partial void RunDangerEvaluation();
+    public partial bool RunDangerEvaluation(int seat);
 
     [MemberFunction("E8 ?? ?? ?? ?? 48 8B C8 E8 ?? ?? ?? ?? 48 8B F8 83 EE")]
-    public partial void GetLocalSeatHandle();
+    public partial SeatHandle* GetLocalSeatHandle();
 
     [MemberFunction("E8 ?? ?? ?? ?? 84 C0 74 ?? 48 8B 8F ?? ?? ?? ?? E8 ?? ?? ?? ?? B9")]
-    public partial void HasLocalEngine();
+    public partial bool HasLocalEngine();
 
     [MemberFunction("E8 ?? ?? ?? ?? 49 8B CF 4C 8B E0")]
-    public partial void GetLocalEngine();
+    public partial EmjLocalEngine* GetLocalEngine();
 
     [MemberFunction("E8 ?? ?? ?? ?? 48 8B 8F ?? ?? ?? ?? E8 ?? ?? ?? ?? 84 C0 74 ?? 48 8B 8F ?? ?? ?? ?? E8 ?? ?? ?? ?? B9")]
-    public partial void SetGame();
+    public partial void SetGame(AgentEmj.EmjGame* game);
 }

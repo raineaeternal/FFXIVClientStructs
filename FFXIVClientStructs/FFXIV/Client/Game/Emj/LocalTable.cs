@@ -11,5 +11,5 @@ public unsafe partial struct LocalTable {
     [FieldOffset(0x17C0)] public EmjLocalEngine* LocalEngine;
 
     [MemberFunction("E8 ?? ?? ?? ?? 48 89 43 ?? 48 8B C3 48 8B 5C 24 ?? 48 83 C4")]
-    public partial LocalTable* Ctor();
+    public partial LocalTable* Ctor(EmjLocalEngine* localEngine, void* a3);
 }

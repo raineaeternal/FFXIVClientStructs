@@ -6,8 +6,8 @@ namespace FFXIVClientStructs.FFXIV.Client.Game.Emj;
 [StructLayout(LayoutKind.Explicit, Size = 0x10)]
 public unsafe partial struct SeatHandle {
     [MemberFunction("E8 ?? ?? ?? ?? 8B C0 C6 44 18")]
-    public partial void GetSeat();
+    public partial uint GetSeat();
 
     [MemberFunction("E8 ?? ?? ?? ?? 48 8B F8 83 EE")]
-    public partial void GetPlayerHandle();
+    public partial PlayerHandle* GetPlayerHandle();
 }

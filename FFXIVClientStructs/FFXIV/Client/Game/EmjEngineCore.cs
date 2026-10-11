@@ -22,5 +22,5 @@ public unsafe partial struct EmjEngineCore {
     [FieldOffset(0x4D0)] public AgentEmj.EmjGame* Game;
 
     [MemberFunction("E8 ?? ?? ?? ?? 48 89 43 ?? 48 8B C3 48 8B 5C 24 ?? 48 8B 74 24 ?? 48 83 C4 ?? 5F C3 48 8B 74 24")]
-    public partial EmjEngineCore* Ctor();
+    public partial EmjEngineCore* Ctor(EmjEngine* engine, void* callback, bool isSolo);
 }

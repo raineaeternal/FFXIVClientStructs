@@ -14,5 +14,5 @@ public unsafe partial struct EventHistory {
     [FieldOffset(0x1000)] public int EventCount;
 
     [MemberFunction("E8 ?? ?? ?? ?? 8B 4B ?? 8D 81")]
-    public partial void ApplyEvent();
+    public partial void ApplyEvent(GameEvent* gameEvent);
 }

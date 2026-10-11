@@ -21,7 +21,7 @@ public unsafe partial struct AgentEmj {
     [FieldOffset(0x30)] public uint MatchType;
 
     // [MemberFunction("")]
-    // public partial void GetEngine();
+    // public partial EmjEngine* GetEngine();
 
     // [MemberFunction("")]
     // public partial void OpenChiSelection();
@@ -57,16 +57,16 @@ public unsafe partial struct AgentEmj {
         [FieldOffset(0xFAB)] public byte EmjCostumeId;
 
         // [MemberFunction("")]
-        // public partial EmjGame* Ctor();
+        // public partial EmjGame* Ctor(AgentEmj* agent, UIModule* uiModule);
 
         // [MemberFunction("")]
-        // public partial void GetEmjAddonText();
+        // public partial CStringPointer GetEmjAddonText(uint rowId);
 
         // [MemberFunction("")]
-        // public partial void GetEmjAddonText2();
+        // public partial CStringPointer GetEmjAddonText2(uint rowId, int param);
 
         // [MemberFunction("")]
-        // public partial void GetEmjAddonText3();
+        // public partial CStringPointer GetEmjAddonText3(uint rowId, int param1, int param2);
 
         // [MemberFunction("")]
         // public partial void UpdateDangerMarkers();
@@ -75,10 +75,10 @@ public unsafe partial struct AgentEmj {
         // public partial void UpdateCallHint();
 
         // [MemberFunction("")]
-        // public partial void AutoPlaySeat();
+        // public partial bool AutoPlaySeat(uint seat);
 
         // [MemberFunction("")]
-        // public partial void UpdateResultYakuText();
+        // public partial void UpdateResultYakuText(void* a2, void* a3);
 
         // Client::UI::Agent::AgentEmj::EmjGame::Seat
         [GenerateInterop]

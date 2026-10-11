@@ -10,5 +10,5 @@ public unsafe partial struct YakuHanTable {
     [FieldOffset(0x00), FixedSizeArray] internal FixedSizeArray74<uint> _han;
 
     [MemberFunction("E8 ?? ?? ?? ?? 48 89 5F ?? 89 5F")]
-    public partial void GetHan();
+    public partial int GetHan(int yakuId, bool isOpen);
 }

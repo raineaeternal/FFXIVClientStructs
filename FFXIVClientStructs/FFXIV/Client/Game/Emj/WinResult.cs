@@ -13,10 +13,10 @@ public unsafe partial struct WinResult {
     [FieldOffset(0x2B0), FixedSizeArray] internal FixedSizeArray14<Candidate> _candidates;
 
     [MemberFunction("E8 ?? ?? ?? ?? 41 8B C6 48 8B 5C 24 ?? 48 8B 6C 24")]
-    public partial void AddCandidate();
+    public partial bool AddCandidate(Candidate* candidate);
 
     [MemberFunction("E8 ?? ?? ?? ?? 85 C0 74 ?? 48 8B 5C 24")]
-    public partial void FindBestHand();
+    public partial bool FindBestHand(Player* player, void* winningTile, int a4);
 
     /// <remarks>
     /// One way to read the winning hand, filled by WinAnalyzer
